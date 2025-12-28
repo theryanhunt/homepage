@@ -1,0 +1,179 @@
+.career {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+.page-intro {
+  font-size: 1.125rem;
+  margin-bottom: 3rem;
+  max-width: 580px;
+}
+
+.career-section {
+  margin-bottom: 4rem;
+}
+
+.career-section h2 {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.timeline-item {
+  border-left: 2px solid var(--accent-light);
+  padding-left: 2rem;
+  position: relative;
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -7px;
+  top: 4px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: var(--accent);
+  box-shadow: 0 0 0 4px var(--bg-primary);
+}
+
+.timeline-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.75rem;
+  gap: 1rem;
+}
+
+.timeline-header h3 {
+  margin-bottom: 0.25rem;
+  font-family: 'Source Serif 4', Georgia, serif;
+}
+
+.company,
+.institution {
+  color: var(--accent);
+  font-weight: 500;
+  margin-bottom: 0;
+  font-size: 0.9375rem;
+}
+
+.period {
+  color: var(--text-muted);
+  font-size: 0.875rem;
+  white-space: nowrap;
+  background: var(--bg-secondary);
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+}
+
+.description {
+  margin-bottom: 1rem;
+  font-size: 0.9375rem;
+}
+
+.highlights {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.highlights li {
+  padding-left: 1.5rem;
+  position: relative;
+  color: var(--text-secondary);
+  font-size: 0.9375rem;
+}
+
+.highlights li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.6em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--accent-light);
+}
+
+.education-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.education-item {
+  padding: 1.75rem;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+}
+
+.education-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.75rem;
+  gap: 1rem;
+}
+
+.education-header h3 {
+  margin-bottom: 0.25rem;
+  font-family: 'Source Serif 4', Georgia, serif;
+}
+
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.625rem;
+}
+
+.skill-tag {
+  padding: 0.5rem 1rem;
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  font-size: 0.875rem;
+  color: var(--text-primary);
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.skill-tag:hover {
+  background-color: var(--accent-bg);
+  border-color: var(--accent-light);
+  color: var(--accent);
+}
+
+@media (max-width: 640px) {
+  .career {
+    padding-top: 2.5rem;
+  }
+
+  .timeline-item {
+    padding-left: 1.5rem;
+  }
+
+  .timeline-header,
+  .education-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .period {
+    margin-top: 0.5rem;
+  }
+
+  .education-item {
+    padding: 1.25rem;
+    border-radius: 12px;
+  }
+}
