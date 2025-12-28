@@ -7,7 +7,7 @@ import BlogPost from './pages/BlogPost'
 
 function App() {
   return (
-    <Router>
+    <Router basename="/homepage/">
       <div className="app">
         <Navigation />
         <main>
