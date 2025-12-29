@@ -3,38 +3,60 @@ import './Career.css'
 const experiences = [
   {
     id: 1,
-    title: 'Senior Software Engineer',
-    company: 'Company Name',
-    period: '2022 - Present',
-    description: 'Brief description of your role and key achievements. What technologies did you work with? What impact did you make?',
+    title: 'Senior Manager, Corporate Development Integration',
+    company: 'Amazon',
+    period: 'October 2022 - Present',
+    description: 'Leading global acquisitions with oversight of due diligence, integration planning, and post-close execution.',
     highlights: [
-      'Achievement or responsibility #1',
-      'Achievement or responsibility #2',
-      'Achievement or responsibility #3'
+      'Lead global acquisitions, managing cross-functional teams to ensure acquisition goals are achieved',
+      'Develop strategic integration plans and continuously improve integration processes and best practices',
+      'Deliver AI-focused acquisitions across Devices & Services and AWS, shaping integration strategy and resolving complex regulatory and privacy challenges'
     ]
   },
   {
     id: 2,
-    title: 'Software Engineer',
-    company: 'Previous Company',
-    period: '2020 - 2022',
-    description: 'Description of your role and contributions in this position.',
+    title: 'Corporate Development, M&A Integration',
+    company: 'Stripe',
+    period: 'January 2022 - September 2022',
+    description: 'Led diligence and integration processes for international acquisitions.',
     highlights: [
-      'Key achievement or project',
-      'Important contribution',
-      'Technology or skill developed'
+      'Coordinated highly cross-functional teams and drove issue resolution for international acquisitions',
+      'Built and executed integration strategies to support the growing M&A function',
+      'Created and presented executive dashboards and reports to track progress and highlight key wins'
     ]
   },
   {
     id: 3,
-    title: 'Junior Developer',
-    company: 'First Company',
-    period: '2018 - 2020',
-    description: 'Your first professional experience and what you learned.',
+    title: 'M&A Recruiting Operations',
+    company: 'Meta',
+    period: 'May 2018 - December 2021',
+    description: 'Supported Corporate Development team with early company evaluation, due diligence, and integration of acquired companies.',
     highlights: [
-      'Learning experience',
-      'First major project',
-      'Skills acquired'
+      'Advised Meta and acquired leadership teams to validate acquisition rationale and mitigate risks',
+      'Partnered with cross-functional teams to navigate large, complex acquisitions with long-term strategic impact',
+      'Ensured objectives were met throughout the integration process'
+    ]
+  },
+  {
+    id: 4,
+    title: 'Recruiting',
+    company: 'Meta',
+    period: 'January 2017 - May 2018',
+    description: 'Full-cycle recruiting experience including sourcing, screening, and hiring.',
+    highlights: [
+      'Managed end-to-end recruiting processes',
+      'Developed candidate pipelines and screening strategies'
+    ]
+  },
+  {
+    id: 5,
+    title: 'Recruiting',
+    company: 'Apple & Aerotek',
+    period: 'May 2013 - February 2016',
+    description: 'Full-cycle recruiting experience including sourcing, screening, and hiring.',
+    highlights: [
+      'Executed full-cycle recruiting across multiple roles',
+      'Built foundational recruiting and talent acquisition skills'
     ]
   }
 ]
@@ -42,22 +64,22 @@ const experiences = [
 const education = [
   {
     id: 1,
-    degree: 'Bachelor of Science in Computer Science',
-    institution: 'University Name',
-    period: '2014 - 2018',
-    description: 'Relevant coursework, honors, or achievements during your studies.'
+    degree: 'Bachelor of Arts, Political Science',
+    institution: 'Sonoma State University',
+    period: '2016',
+    description: ''
   }
 ]
 
 const skills = [
-  'JavaScript/TypeScript',
-  'React',
-  'Node.js',
-  'Python',
-  'SQL/NoSQL',
-  'Cloud Platforms (AWS/Azure/GCP)',
-  'Docker & Kubernetes',
-  'Git & CI/CD'
+  'Corporate Development',
+  'M&A Integration',
+  'Due Diligence',
+  'Cross-functional Leadership',
+  'Strategic Planning',
+  'Project Management',
+  'Executive Communication',
+  'Talent Acquisition'
 ]
 
 export default function Career() {
@@ -65,7 +87,7 @@ export default function Career() {
     <div className="container career">
       <h1>Career</h1>
       <p className="page-intro">
-        A summary of my professional journey, education, and technical expertise.
+        Adaptable, results-driven leader with extensive experience in corporate development, business operations, and cross-functional team leadership.
       </p>
 
       <section className="career-section">
