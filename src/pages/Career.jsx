@@ -73,17 +73,6 @@ const education = [
   }
 ]
 
-const competencies = [
-  'M&A diligence & integration leadership',
-  'Deal thesis translation to customer, product, and financial outcomes',
-  'Cross-functional governance & program management',
-  'Risk mitigation across privacy, security, and regulatory domains',
-  'Executive communications & KPI storytelling',
-  'Operating model design & change management',
-  'International expansion & localization planning',
-  'Vendor and partnership negotiations'
-]
-
 export default function Career() {
   return (
     <div className="container career">
@@ -129,17 +118,6 @@ export default function Career() {
               </div>
               <p className="description">{edu.description}</p>
             </div>
-          ))}
-        </div>
-      </section>
-
-      <section className="career-section">
-        <h2>Corporate Development Competencies</h2>
-        <div className="skills-grid">
-          {competencies.map((skill, index) => (
-            <span key={index} className="skill-tag">
-              {skill}
-            </span>
           ))}
         </div>
       </section>
