@@ -5,58 +5,60 @@ const experiences = [
     id: 1,
     title: 'Senior Manager, Corporate Development Integration',
     company: 'Amazon',
-    period: 'October 2022 - Present',
-    description: 'Leading global acquisitions with oversight of due diligence, integration planning, and post-close execution.',
+    period: 'October 2022 – Present',
+    description:
+      'Lead global acquisitions end-to-end with a focus on diligence quality, integration readiness, and measurable post-close outcomes.',
     highlights: [
-      'Lead global acquisitions, managing cross-functional teams to ensure acquisition goals are achieved',
-      'Develop strategic integration plans and continuously improve integration processes and best practices',
-      'Deliver AI-focused acquisitions across Devices & Services and AWS, shaping integration strategy and resolving complex regulatory and privacy challenges'
+      'Drive AI-focused acquisitions across Devices & Services and AWS, resolving complex regulatory, privacy, and operational dependencies',
+      'Design and execute integration strategies that connect deal thesis to customer, product, and financial results',
+      'Build repeatable mechanisms for cross-functional governance, risk management, and executive reporting'
     ]
   },
   {
     id: 2,
     title: 'Corporate Development, M&A Integration',
     company: 'Stripe',
-    period: 'January 2022 - September 2022',
-    description: 'Led diligence and integration processes for international acquisitions.',
+    period: 'January 2022 – September 2022',
+    description: 'Led diligence and integration for international acquisitions in a rapidly scaling product portfolio.',
     highlights: [
-      'Coordinated highly cross-functional teams and drove issue resolution for international acquisitions',
-      'Built and executed integration strategies to support the growing M&A function',
-      'Created and presented executive dashboards and reports to track progress and highlight key wins'
+      'Coordinated global teams to remove blockers, align launch plans, and protect deal value',
+      'Created integration playbooks and KPI dashboards that improved readiness across product, eng, and GTM teams',
+      'Established executive operating rhythms to surface risks and highlight milestone achievements'
     ]
   },
   {
     id: 3,
     title: 'M&A Recruiting Operations',
     company: 'Meta',
-    period: 'May 2018 - December 2021',
-    description: 'Supported Corporate Development team with early company evaluation, due diligence, and integration of acquired companies.',
+    period: 'May 2018 – December 2021',
+    description:
+      'Partnered with Corporate Development to evaluate targets, steward due diligence, and integrate acquired teams.',
     highlights: [
-      'Advised Meta and acquired leadership teams to validate acquisition rationale and mitigate risks',
-      'Partnered with cross-functional teams to navigate large, complex acquisitions with long-term strategic impact',
-      'Ensured objectives were met throughout the integration process'
+      'Guided acquired leadership through onboarding, governance, and performance alignment to deal objectives',
+      'Partnered across legal, finance, product, and people teams to navigate large, complex acquisitions',
+      'Built dashboards and processes that kept leaders informed and mitigated integration risk'
     ]
   },
   {
     id: 4,
     title: 'Recruiting',
     company: 'Meta',
-    period: 'January 2017 - May 2018',
-    description: 'Full-cycle recruiting experience including sourcing, screening, and hiring.',
+    period: 'January 2017 – May 2018',
+    description: 'Full-cycle recruiting across technical and business roles during a period of rapid growth.',
     highlights: [
-      'Managed end-to-end recruiting processes',
-      'Developed candidate pipelines and screening strategies'
+      'Managed sourcing, screening, and closing strategies for high-priority roles',
+      'Partnered with hiring managers to forecast needs and calibrate selection criteria'
     ]
   },
   {
     id: 5,
     title: 'Recruiting',
     company: 'Apple & Aerotek',
-    period: 'May 2013 - February 2016',
-    description: 'Full-cycle recruiting experience including sourcing, screening, and hiring.',
+    period: 'May 2013 – February 2016',
+    description: 'Developed foundational recruiting and stakeholder management skills across diverse teams.',
     highlights: [
-      'Executed full-cycle recruiting across multiple roles',
-      'Built foundational recruiting and talent acquisition skills'
+      'Executed full-cycle recruiting for technical and corporate functions',
+      'Built consistent candidate pipelines while elevating hiring team collaboration'
     ]
   }
 ]
@@ -66,9 +68,20 @@ const education = [
     id: 1,
     degree: 'Bachelor of Arts, Political Science',
     institution: 'Sonoma State University',
-    period: '2016',
+    period: 'Class of 2016',
     description: ''
   }
+]
+
+const competencies = [
+  'M&A diligence & integration leadership',
+  'Deal thesis translation to customer, product, and financial outcomes',
+  'Cross-functional governance & program management',
+  'Risk mitigation across privacy, security, and regulatory domains',
+  'Executive communications & KPI storytelling',
+  'Operating model design & change management',
+  'International expansion & localization planning',
+  'Vendor and partnership negotiations'
 ]
 
 export default function Career() {
@@ -76,7 +89,7 @@ export default function Career() {
     <div className="container career">
       <h1>Career</h1>
       <p className="page-intro">
-        Adaptable, results-driven leader with extensive experience in corporate development, business operations, and cross-functional team leadership.
+        Corporate development leader specializing in M&A diligence and integration for technology companies, uniting cross-functional teams to deliver deal value, operational readiness, and sustainable growth.
       </p>
 
       <section className="career-section">
@@ -116,6 +129,17 @@ export default function Career() {
               </div>
               <p className="description">{edu.description}</p>
             </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="career-section">
+        <h2>Corporate Development Competencies</h2>
+        <div className="skills-grid">
+          {competencies.map((skill, index) => (
+            <span key={index} className="skill-tag">
+              {skill}
+            </span>
           ))}
         </div>
       </section>
