@@ -12,8 +12,8 @@ export default function BlogPost() {
         <div className="not-found">
           <h1>Post Not Found</h1>
           <p>The blog post you're looking for doesn't exist.</p>
-          <Link to="/journal" className="back-link">
-            ← Back to Journal
+          <Link to="/" className="back-link">
+            ← Back to Thoughts
           </Link>
         </div>
       </div>
@@ -31,8 +31,8 @@ export default function BlogPost() {
 
   return (
     <div className="container blog-post">
-      <Link to="/journal" className="back-link">
-        ← Back to Journal
+      <Link to="/" className="back-link">
+        ← Back to Thoughts
       </Link>
 
       <article>
