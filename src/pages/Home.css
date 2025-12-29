@@ -24,40 +24,97 @@
   line-height: 1.8;
 }
 
-.quick-links {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
-  margin-bottom: 4rem;
+.thoughts h2 {
+  margin-bottom: 1.5rem;
 }
 
-.quick-link-card {
-  padding: 2rem;
+.posts-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.post-card {
   background: var(--bg-secondary);
   border: 1px solid var(--border);
   border-radius: 16px;
+  padding: 2rem;
   transition: all 0.3s ease;
 }
 
-.quick-link-card:hover {
+.post-card:hover {
   box-shadow: 0 8px 24px var(--shadow);
   transform: translateY(-4px);
   border-color: var(--accent-light);
 }
 
-.quick-link-card h3 {
-  font-family: 'Source Serif 4', Georgia, serif;
-  color: var(--text-primary);
+.post-link {
+  color: inherit;
+  display: block;
+}
+
+.post-link:hover {
+  color: inherit;
+}
+
+.post-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
   margin-bottom: 0.75rem;
-  font-size: 1.25rem;
 }
 
-.quick-link-card p {
+.post-header h3 {
+  margin: 0;
+  color: var(--text-primary);
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-size: 1.5rem;
+  transition: color 0.2s ease;
+}
+
+.post-card:hover .post-header h3 {
+  color: var(--accent);
+}
+
+.post-date {
+  color: var(--text-muted);
+  font-size: 0.875rem;
+  white-space: nowrap;
+  background: var(--bg-tertiary);
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+}
+
+.post-excerpt {
+  font-size: 1rem;
   margin-bottom: 1.25rem;
-  font-size: 0.9375rem;
+  line-height: 1.7;
 }
 
-.link-button {
+.post-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.tag {
+  padding: 0.25rem 0.625rem;
+  background-color: var(--bg-tertiary);
+  border-radius: 20px;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.post-card:hover .tag {
+  background-color: var(--accent-bg);
+  color: var(--accent);
+}
+
+.read-more {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
@@ -67,24 +124,8 @@
   transition: gap 0.2s ease;
 }
 
-.link-button:hover {
+.post-card:hover .read-more {
   gap: 0.75rem;
-  color: var(--accent);
-}
-
-.about {
-  margin-top: 4rem;
-  padding-top: 3rem;
-  border-top: 1px solid var(--border);
-}
-
-.about h2 {
-  margin-top: 0;
-}
-
-.about p {
-  font-size: 1.0625rem;
-  line-height: 1.8;
 }
 
 @media (max-width: 640px) {
@@ -96,13 +137,21 @@
     margin-bottom: 3rem;
   }
 
-  .quick-links {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
-
-  .quick-link-card {
+  .post-card {
     padding: 1.5rem;
     border-radius: 12px;
+  }
+
+  .post-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .post-header h3 {
+    font-size: 1.25rem;
+  }
+
+  .post-date {
+    margin-top: 0.5rem;
   }
 }

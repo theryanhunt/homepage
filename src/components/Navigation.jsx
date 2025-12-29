@@ -17,21 +17,15 @@ export default function Navigation() {
         <div className="nav-links">
           <Link
             to="/"
-            className={`nav-link ${isActive('/') ? 'active' : ''}`}
+            className={`nav-link ${isActive('/') || location.pathname.startsWith('/thoughts/') ? 'active' : ''}`}
           >
-            Home
+            Thoughts
           </Link>
           <Link
             to="/career"
             className={`nav-link ${isActive('/career') ? 'active' : ''}`}
           >
             Career
-          </Link>
-          <Link
-            to="/journal"
-            className={`nav-link ${isActive('/journal') || location.pathname.startsWith('/journal/') ? 'active' : ''}`}
-          >
-            Journal
           </Link>
         </div>
       </div>

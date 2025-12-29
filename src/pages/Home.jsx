@@ -1,7 +1,19 @@
 import { Link } from 'react-router-dom'
+import { getAllPosts } from '../data/blogPosts'
 import './Home.css'
 
 export default function Home() {
+  const posts = getAllPosts()
+
+  const formatDate = (dateString) => {
+    const date = new Date(dateString)
+    return date.toLocaleDateString('en-US', {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric'
+    })
+  }
+
   return (
     <div className="container home">
       <section className="hero">
@@ -11,37 +23,33 @@ export default function Home() {
         </p>
         <p className="hero-description">
           Welcome to my personal space on the web. I'm passionate about [your interests/expertise].
-          Here you'll find my career journey, thoughts, and projects.
+          Here you'll find my thoughts, insights, and updates.
         </p>
       </section>
 
-      <section className="quick-links">
-        <div className="quick-link-card">
-          <h3>Career</h3>
-          <p>Explore my professional experience and background</p>
-          <Link to="/career" className="link-button">
-            View Career →
-          </Link>
+      <section className="thoughts">
+        <h2>Thoughts</h2>
+        <div className="posts-list">
+          {posts.map((post) => (
+            <article key={post.id} className="post-card">
+              <Link to={`/thoughts/${post.id}`} className="post-link">
+                <div className="post-header">
+                  <h3>{post.title}</h3>
+                  <time className="post-date">{formatDate(post.date)}</time>
+                </div>
+                <p className="post-excerpt">{post.excerpt}</p>
+                <div className="post-tags">
+                  {post.tags.map((tag) => (
+                    <span key={tag} className="tag">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+                <span className="read-more">Read more →</span>
+              </Link>
+            </article>
+          ))}
         </div>
-        <div className="quick-link-card">
-          <h3>Journal</h3>
-          <p>Read my thoughts, insights, and updates</p>
-          <Link to="/journal" className="link-button">
-            Read Journal →
-          </Link>
-        </div>
-      </section>
-
-      <section className="about">
-        <h2>About Me</h2>
-        <p>
-          [Add a brief bio about yourself. You can describe your background,
-          interests, skills, or what drives you professionally.]
-        </p>
-        <p>
-          [Feel free to add more paragraphs about your journey, current focus,
-          or what you're working on.]
-        </p>
       </section>
     </div>
   )
