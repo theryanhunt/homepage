@@ -71,17 +71,6 @@ const education = [
   }
 ]
 
-const skills = [
-  'Corporate Development',
-  'M&A Integration',
-  'Due Diligence',
-  'Cross-functional Leadership',
-  'Strategic Planning',
-  'Project Management',
-  'Executive Communication',
-  'Talent Acquisition'
-]
-
 export default function Career() {
   return (
     <div className="container career">
@@ -126,17 +115,6 @@ export default function Career() {
                 <span className="period">{edu.period}</span>
               </div>
               <p className="description">{edu.description}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section className="career-section">
-        <h2>Skills</h2>
-        <div className="skills-grid">
-          {skills.map((skill, index) => (
-            <div key={index} className="skill-tag">
-              {skill}
             </div>
           ))}
         </div>
