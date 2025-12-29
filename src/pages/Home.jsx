@@ -17,7 +17,7 @@ export default function Home() {
   return (
     <div className="container home">
       <section className="hero">
-        <h1>Hi, I'm [Your Name]</h1>
+        <h1>Hi, I'm Ryan Hunt</h1>
         <p className="hero-subtitle">
           [Your professional title or a brief description of what you do]
         </p>

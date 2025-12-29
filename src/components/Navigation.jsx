@@ -12,7 +12,7 @@ export default function Navigation() {
     <nav className="nav">
       <div className="nav-container">
         <Link to="/" className="nav-logo">
-          Your Name
+          Ryan Hunt
         </Link>
         <div className="nav-links">
           <Link
