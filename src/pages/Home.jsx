@@ -17,13 +17,12 @@ export default function Home() {
   return (
     <div className="container home">
       <section className="hero">
-        <h1>Hi, I'm Ryan Hunt</h1>
+        <h1>Hi, I'm Ryan</h1>
         <p className="hero-subtitle">
-          [Your professional title or a brief description of what you do]
+          Corporate Development Integration at Amazon
         </p>
         <p className="hero-description">
-          Welcome to my personal space on the web. I'm passionate about [your interests/expertise].
-          Here you'll find my thoughts, insights, and updates.
+          Welcome to my personal space on the web.
         </p>
       </section>
 
