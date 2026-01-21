@@ -1,5 +1,5 @@
 .career {
-  padding-top: 3.5rem;
+  padding-top: 3rem;
   padding-bottom: 4rem;
 }
 
@@ -27,18 +27,18 @@
 }
 
 .timeline-item {
-  border-left: 2px solid var(--border);
-  padding-left: 2rem;
+  border-left: 1px solid var(--border);
+  padding-left: 1.75rem;
   position: relative;
 }
 
 .timeline-item::before {
   content: '';
   position: absolute;
-  left: -8px;
+  left: -6px;
   top: 6px;
-  width: 10px;
-  height: 10px;
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
   background-color: var(--accent);
   box-shadow: 0 0 0 4px var(--bg-primary);
@@ -62,22 +62,22 @@
   color: var(--accent-light);
   font-weight: 500;
   margin-bottom: 0;
-  font-size: 0.9375rem;
+  font-size: 0.875rem;
 }
 
 .period {
   color: var(--text-muted);
-  font-size: 0.875rem;
+  font-size: 0.8rem;
   white-space: nowrap;
   background: var(--accent-bg);
-  padding: 0.2rem 0.6rem;
-  border-radius: 8px;
+  padding: 0.2rem 0.5rem;
+  border-radius: 6px;
   border: 1px solid var(--border);
 }
 
 .description {
   margin-bottom: 1rem;
-  font-size: 0.9375rem;
+  font-size: 0.9rem;
 }
 
 .highlights {
@@ -91,7 +91,7 @@
   padding-left: 1.5rem;
   position: relative;
   color: var(--text-secondary);
-  font-size: 0.9375rem;
+  font-size: 0.9rem;
 }
 
 .highlights li::before {
@@ -112,10 +112,10 @@
 }
 
 .education-item {
-  padding: 1.5rem;
+  padding: 1.25rem;
   background: var(--bg-secondary);
   border: 1px solid var(--border);
-  border-radius: 12px;
+  border-radius: 8px;
 }
 
 .education-header {
@@ -138,18 +138,17 @@
 }
 
 .skill-tag {
-  padding: 0.5rem 1rem;
-  background-color: var(--bg-secondary);
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  font-size: 0.875rem;
+  padding: 0.4rem 0.85rem;
+  background-color: transparent;
+  border: 1px dashed var(--border);
+  border-radius: 6px;
+  font-size: 0.8rem;
   color: var(--text-primary);
   font-weight: 500;
-  transition: all 0.2s ease;
+  transition: color 0.2s ease, border-color 0.2s ease;
 }
 
 .skill-tag:hover {
-  background-color: var(--accent-bg);
   border-color: var(--accent);
   color: var(--accent-light);
 }
@@ -160,7 +159,7 @@
   }
 
   .timeline-item {
-    padding-left: 1.5rem;
+    padding-left: 1.25rem;
   }
 
   .timeline-header,
