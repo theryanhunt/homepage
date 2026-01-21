@@ -22,6 +22,12 @@ export default function Navigation() {
             Thoughts
           </Link>
           <Link
+            to="/journal"
+            className={`nav-link ${isActive('/journal') || location.pathname.startsWith('/journal/') ? 'active' : ''}`}
+          >
+            Journal
+          </Link>
+          <Link
             to="/career"
             className={`nav-link ${isActive('/career') ? 'active' : ''}`}
           >

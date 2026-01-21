@@ -1,5 +1,7 @@
 import { useParams, Link } from 'react-router-dom'
+import { marked } from 'marked'
 import { getPostById } from '../data/blogPosts'
+import { formatDate } from '../lib/formatDate'
 import './BlogPost.css'
 
 export default function BlogPost() {
@@ -20,14 +22,7 @@ export default function BlogPost() {
     )
   }
 
-  const formatDate = (dateString) => {
-    const date = new Date(dateString)
-    return date.toLocaleDateString('en-US', {
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric'
-    })
-  }
+  const html = marked.parse(post.content)
 
   return (
     <div className="container blog-post">
@@ -50,28 +45,10 @@ export default function BlogPost() {
           </div>
         </header>
 
-        <div className="post-content">
-          {post.content.split('\n\n').map((paragraph, index) => {
-            if (paragraph.startsWith('# ')) {
-              return <h1 key={index}>{paragraph.slice(2)}</h1>
-            } else if (paragraph.startsWith('## ')) {
-              return <h2 key={index}>{paragraph.slice(3)}</h2>
-            } else if (paragraph.startsWith('### ')) {
-              return <h3 key={index}>{paragraph.slice(4)}</h3>
-            } else if (paragraph.startsWith('- ')) {
-              const items = paragraph.split('\n')
-              return (
-                <ul key={index}>
-                  {items.map((item, i) => (
-                    <li key={i}>{item.slice(2)}</li>
-                  ))}
-                </ul>
-              )
-            } else {
-              return <p key={index}>{paragraph}</p>
-            }
-          })}
-        </div>
+        <div
+          className="post-content"
+          dangerouslySetInnerHTML={{ __html: html }}
+        />
       </article>
     </div>
   )
