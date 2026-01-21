@@ -1,18 +1,10 @@
 import { Link } from 'react-router-dom'
 import { getAllPosts } from '../data/blogPosts'
+import { formatDate } from '../lib/formatDate'
 import './Journal.css'
 
 export default function Journal() {
   const posts = getAllPosts()
-
-  const formatDate = (dateString) => {
-    const date = new Date(dateString)
-    return date.toLocaleDateString('en-US', {
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric'
-    })
-  }
 
   return (
     <div className="container journal">

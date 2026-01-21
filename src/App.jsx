@@ -1,7 +1,8 @@
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Navigation from './components/Navigation'
 import Home from './pages/Home'
 import Career from './pages/Career'
+import Journal from './pages/Journal'
 import BlogPost from './pages/BlogPost'
 
 function App() {
@@ -13,9 +14,9 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/career" element={<Career />} />
+            <Route path="/journal" element={<Journal />} />
+            <Route path="/journal/:id" element={<BlogPost />} />
             <Route path="/thoughts/:id" element={<BlogPost />} />
-            <Route path="/journal" element={<Navigate to="/" replace />} />
-            <Route path="/journal/:id" element={<Navigate to="/" replace />} />
           </Routes>
         </main>
       </div>
