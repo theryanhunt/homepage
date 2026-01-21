@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=Inter:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap');
 
 * {
   margin: 0;
@@ -7,21 +7,22 @@
 }
 
 :root {
-  --text-primary: #2d2a26;
-  --text-secondary: #6b6560;
-  --text-muted: #9a938c;
-  --bg-primary: #fffcf8;
-  --bg-secondary: #f7f3ee;
-  --bg-tertiary: #efe9e1;
-  --accent: #c96442;
-  --accent-light: #e8a88c;
-  --accent-bg: #fdf0e9;
-  --border: #e5dfd8;
-  --shadow: rgba(45, 42, 38, 0.08);
+  color-scheme: dark;
+  --text-primary: #f4e9d8;
+  --text-secondary: #d7c8b4;
+  --text-muted: #b39e86;
+  --bg-primary: #1c1915;
+  --bg-secondary: #25211b;
+  --bg-tertiary: #2f2a23;
+  --accent: #f0a45d;
+  --accent-light: #f6c38c;
+  --accent-bg: #2f261d;
+  --border: #3b332a;
+  --shadow: rgba(0, 0, 0, 0.35);
 }
 
 body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: var(--text-primary);
@@ -32,21 +33,25 @@ body {
 a {
   color: var(--accent);
   text-decoration: none;
-  transition: color 0.2s ease;
+  transition: color 0.2s ease, text-decoration-color 0.2s ease;
+  text-decoration-line: underline;
+  text-decoration-color: transparent;
+  text-underline-offset: 0.2em;
 }
 
 a:hover {
-  color: var(--text-primary);
+  color: var(--accent-light);
+  text-decoration-color: var(--accent-light);
 }
 
 .container {
-  max-width: 780px;
+  max-width: 840px;
   margin: 0 auto;
   padding: 2.5rem;
 }
 
 h1, h2, h3 {
-  font-family: 'Source Serif 4', Georgia, serif;
+  font-family: 'IBM Plex Mono', 'SFMono-Regular', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
   color: var(--text-primary);
 }
 
@@ -79,7 +84,12 @@ p {
 
 ::selection {
   background-color: var(--accent-light);
-  color: var(--text-primary);
+  color: #1c1915;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
 }
 
 @media (max-width: 640px) {
