@@ -20,9 +20,8 @@ export default function BlogPost() {
   const { id } = useParams()
   const location = useLocation()
   const post = getPostById(id)
-  const isJournalPath = location.pathname.startsWith('/journal/')
-  const backTarget = isJournalPath ? '/journal' : '/'
-  const backLabel = isJournalPath ? 'Journal' : 'Thoughts'
+  const backTarget = '/'
+  const backLabel = 'Thoughts'
 
   if (!post) {
     return (

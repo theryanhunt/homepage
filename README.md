@@ -6,7 +6,7 @@ A clean, professional, and minimal personal website built with React and Vite.
 
 - **Homepage**: Welcome section with quick links to other pages
 - **Career Page**: Showcase your professional experience, education, and skills
-- **Journal/Blog**: Share your thoughts and insights with a clean blog interface
+- **Thoughts**: Share your thoughts and insights with a clean blog interface
 
 ## Getting Started
 
@@ -65,6 +65,31 @@ npm run preview
    - Add, edit, or remove blog posts
    - Each post should have: id, title, date, excerpt, content, and tags
 
+### Add a Thought (Beginner Friendly)
+
+1. Create a new Markdown file in `src/content/posts/` (example: `my-new-post.md`).
+2. Use this template:
+
+```md
+---
+id: my-new-post
+title: "My New Post"
+date: "2025-01-01"
+excerpt: "One sentence summary."
+tags:
+  - Personal
+  - Web
+---
+
+# My New Post
+
+Write here...
+```
+
+Tips:
+- Keep the filename and `id` the same (without `.md`).
+- Dates use `YYYY-MM-DD`.
+
 ### Styling
 
 All styling uses CSS custom properties defined in `src/index.css`. You can customize:
@@ -86,8 +111,6 @@ All styling uses CSS custom properties defined in `src/index.css`. You can custo
 │   │   ├── Home.css
 │   │   ├── Career.jsx
 │   │   ├── Career.css
-│   │   ├── Journal.jsx
-│   │   ├── Journal.css
 │   │   ├── BlogPost.jsx
 │   │   └── BlogPost.css
 │   ├── data/

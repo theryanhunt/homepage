@@ -4,7 +4,6 @@ import './Navigation.css'
 export default function Navigation({ theme, onToggleTheme }) {
   const location = useLocation()
   const isThoughts = location.pathname === '/' || location.pathname.startsWith('/thoughts/')
-  const isJournal = location.pathname === '/journal' || location.pathname.startsWith('/journal/')
   const nextTheme = theme === 'dark' ? 'light' : 'dark'
 
   return (
@@ -20,13 +19,6 @@ export default function Navigation({ theme, onToggleTheme }) {
             end
           >
             Thoughts
-          </NavLink>
-          <NavLink
-            to="/journal"
-            className={`nav-link ${isJournal ? 'active' : ''}`}
-            end
-          >
-            Journal
           </NavLink>
           <NavLink
             to="/career"

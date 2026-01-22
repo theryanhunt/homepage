@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Navigation from './components/Navigation'
 import Home from './pages/Home'
 import Career from './pages/Career'
-import Journal from './pages/Journal'
 import BlogPost from './pages/BlogPost'
 import NotFound from './pages/NotFound'
 
@@ -42,8 +41,6 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/career" element={<Career />} />
-            <Route path="/journal" element={<Journal />} />
-            <Route path="/journal/:id" element={<BlogPost />} />
             <Route path="/thoughts/:id" element={<BlogPost />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
