@@ -7,21 +7,23 @@ import BlogPost from './pages/BlogPost'
 import NotFound from './pages/NotFound'
 
 const THEME_STORAGE_KEY = 'theme'
+const VALID_THEMES = ['wave', 'dragon', 'lotus']
 
 function App() {
   const [theme, setTheme] = useState(() => {
     if (typeof window === 'undefined') {
-      return 'dark'
+      return 'wave'
     }
 
     const stored = window.localStorage.getItem(THEME_STORAGE_KEY)
-    if (stored === 'light' || stored === 'dark') {
+    if (VALID_THEMES.includes(stored)) {
       return stored
     }
 
+    // Map system preference: light -> lotus, dark -> wave
     return window.matchMedia('(prefers-color-scheme: light)').matches
-      ? 'light'
-      : 'dark'
+      ? 'lotus'
+      : 'wave'
   })
 
   useEffect(() => {
@@ -29,14 +31,10 @@ function App() {
     window.localStorage.setItem(THEME_STORAGE_KEY, theme)
   }, [theme])
 
-  const toggleTheme = () => {
-    setTheme((prevTheme) => (prevTheme === 'dark' ? 'light' : 'dark'))
-  }
-
   return (
     <Router basename={import.meta.env.BASE_URL}>
       <div className="app">
-        <Navigation theme={theme} onToggleTheme={toggleTheme} />
+        <Navigation theme={theme} onSetTheme={setTheme} />
         <main>
           <Routes>
             <Route path="/" element={<Home />} />

@@ -1,10 +1,38 @@
+import { useState, useRef, useEffect } from 'react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
 import './Navigation.css'
 
-export default function Navigation({ theme, onToggleTheme }) {
+const THEMES = [
+  { id: 'wave', label: 'Wave', icon: '◐' },
+  { id: 'dragon', label: 'Dragon', icon: '◑' },
+  { id: 'lotus', label: 'Lotus', icon: '○' },
+]
+
+export default function Navigation({ theme, onSetTheme }) {
   const location = useLocation()
   const isThoughts = location.pathname === '/' || location.pathname.startsWith('/thoughts/')
-  const nextTheme = theme === 'dark' ? 'light' : 'dark'
+  const [isOpen, setIsOpen] = useState(false)
+  const dropdownRef = useRef(null)
+
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setIsOpen(false)
+      }
+    }
+
+    if (isOpen) {
+      document.addEventListener('mousedown', handleClickOutside)
+      return () => document.removeEventListener('mousedown', handleClickOutside)
+    }
+  }, [isOpen])
+
+  const handleThemeSelect = (themeId) => {
+    onSetTheme(themeId)
+    setIsOpen(false)
+  }
+
+  const currentTheme = THEMES.find((t) => t.id === theme) || THEMES[0]
 
   return (
     <nav className="nav">
@@ -27,18 +55,35 @@ export default function Navigation({ theme, onToggleTheme }) {
           >
             Career
           </NavLink>
-          <button
-            type="button"
-            className="theme-toggle"
-            onClick={onToggleTheme}
-            aria-label={`Switch to ${nextTheme} mode`}
-            aria-pressed={theme === 'dark'}
-            title={`Switch to ${nextTheme} mode`}
-          >
-            <span className="theme-toggle-icon" aria-hidden="true">
-              {theme === 'dark' ? '\\o/' : '( )'}
-            </span>
-          </button>
+          <div className="theme-selector" ref={dropdownRef}>
+            <button
+              type="button"
+              className="theme-toggle"
+              onClick={() => setIsOpen(!isOpen)}
+              aria-label="Select theme"
+              aria-expanded={isOpen}
+              aria-haspopup="listbox"
+            >
+              <span className="theme-toggle-icon" aria-hidden="true">*</span>
+            </button>
+            {isOpen && (
+              <div className="theme-dropdown" role="listbox" aria-label="Theme options">
+                {THEMES.map((t) => (
+                  <button
+                    key={t.id}
+                    type="button"
+                    className={`theme-option ${t.id === theme ? 'active' : ''}`}
+                    onClick={() => handleThemeSelect(t.id)}
+                    role="option"
+                    aria-selected={t.id === theme}
+                  >
+                    <span className="theme-option-icon">{t.icon}</span>
+                    <span className="theme-option-label">{t.label}</span>
+                  </button>
+                ))}
+              </div>
+            )}
+          </div>
         </div>
       </div>
     </nav>

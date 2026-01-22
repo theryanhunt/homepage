@@ -6,38 +6,59 @@
   box-sizing: border-box;
 }
 
-:root {
+/* Wave (Cool Dark) - Default Kanagawa theme */
+:root,
+[data-theme='wave'] {
   color-scheme: dark;
-  --text-primary: #f7eadb;
-  --text-secondary: #e1cbb2;
-  --text-muted: #c0a78c;
-  --bg-primary: #1a1411;
-  --bg-secondary: #241b16;
-  --bg-tertiary: #2c211b;
-  --bg-glow: #3b2a20;
-  --accent: #f4b47c;
-  --accent-light: #ffd1a1;
-  --accent-bg: #2a221c;
-  --border: #3f3128;
-  --shadow: rgba(10, 7, 5, 0.35);
-  --selection-text: #1c1915;
+  --bg-primary: #1F1F28;
+  --bg-secondary: #16161D;
+  --bg-tertiary: #2A2A37;
+  --bg-glow: #363646;
+  --text-primary: #DCD7BA;
+  --text-secondary: #C8C093;
+  --text-muted: #727169;
+  --accent: #7E9CD8;
+  --accent-light: #A3D4D5;
+  --accent-bg: #252535;
+  --border: #54546D;
+  --shadow: rgba(22, 22, 29, 0.5);
+  --selection-text: #1F1F28;
 }
 
-[data-theme='light'] {
+/* Dragon (Warm Dark) */
+[data-theme='dragon'] {
+  color-scheme: dark;
+  --bg-primary: #181616;
+  --bg-secondary: #0d0c0c;
+  --bg-tertiary: #1D1C19;
+  --bg-glow: #282727;
+  --text-primary: #c5c9c5;
+  --text-secondary: #a6a69c;
+  --text-muted: #7a8382;
+  --accent: #c4746e;
+  --accent-light: #b6927b;
+  --accent-bg: #1D1C19;
+  --border: #393836;
+  --shadow: rgba(13, 12, 12, 0.6);
+  --selection-text: #181616;
+}
+
+/* Lotus (Warm Light) */
+[data-theme='lotus'] {
   color-scheme: light;
-  --text-primary: #2b1e17;
-  --text-secondary: #4a3a30;
-  --text-muted: #6b5a4c;
-  --bg-primary: #f7efe6;
-  --bg-secondary: #fff7ee;
-  --bg-tertiary: #f1e5d8;
-  --bg-glow: #f3d9c1;
-  --accent: #c36a2d;
-  --accent-light: #e28f50;
-  --accent-bg: #f1e3d6;
-  --border: #d7c7b8;
-  --shadow: rgba(72, 48, 36, 0.18);
-  --selection-text: #fdf8f3;
+  --bg-primary: #f2ecbc;
+  --bg-secondary: #e5ddb0;
+  --bg-tertiary: #dcd5ac;
+  --bg-glow: #e7dba0;
+  --text-primary: #43436c;
+  --text-secondary: #545464;
+  --text-muted: #716e61;
+  --accent: #4d699b;
+  --accent-light: #5d57a3;
+  --accent-bg: #c7d7e0;
+  --border: #d5cea3;
+  --shadow: rgba(67, 67, 108, 0.12);
+  --selection-text: #f2ecbc;
 }
 
 body {
@@ -51,7 +72,7 @@ body {
     radial-gradient(700px at 85% 0%, var(--bg-tertiary), transparent 55%),
     linear-gradient(145deg, var(--bg-primary), var(--bg-secondary));
   background-attachment: fixed;
-  line-height: 1.75;
+  line-height: 1.8;
   font-size: 16px;
   transition: color 0.2s ease, background-color 0.2s ease;
 }
@@ -73,7 +94,7 @@ a:hover {
 .container {
   max-width: 760px;
   margin: 0 auto;
-  padding: 2.5rem;
+  padding: 3rem;
 }
 
 h1, h2, h3 {
@@ -94,7 +115,7 @@ h2 {
   font-size: 1.75rem;
   font-weight: 500;
   margin-bottom: 1rem;
-  margin-top: 2.5rem;
+  margin-top: 3rem;
   letter-spacing: -0.01em;
 }
 
