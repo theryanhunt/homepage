@@ -1,6 +1,5 @@
-import { Link } from 'react-router-dom'
 import { getAllPosts } from '../data/blogPosts'
-import { formatDate } from '../lib/formatDate'
+import PostList from '../components/PostList'
 import './Home.css'
 
 export default function Home() {
@@ -20,27 +19,7 @@ export default function Home() {
 
       <section className="thoughts">
         <h2>Thoughts</h2>
-        <div className="posts-list">
-          {posts.map((post) => (
-            <article key={post.id} className="post-card">
-              <Link to={`/thoughts/${post.id}`} className="post-link">
-                <div className="post-header">
-                  <h3>{post.title}</h3>
-                  <time className="post-date">{formatDate(post.date)}</time>
-                </div>
-                <p className="post-excerpt">{post.excerpt}</p>
-                <div className="post-tags">
-                  {post.tags.map((tag) => (
-                    <span key={tag} className="tag">
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-                <span className="read-more">Read more →</span>
-              </Link>
-            </article>
-          ))}
-        </div>
+        <PostList posts={posts} linkPrefix="/thoughts/" headingLevel="h3" />
       </section>
     </div>
   )

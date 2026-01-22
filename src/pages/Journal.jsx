@@ -1,6 +1,5 @@
-import { Link } from 'react-router-dom'
 import { getAllPosts } from '../data/blogPosts'
-import { formatDate } from '../lib/formatDate'
+import PostList from '../components/PostList'
 import './Journal.css'
 
 export default function Journal() {
@@ -13,27 +12,7 @@ export default function Journal() {
         Thoughts, insights, and updates on technology, career, and personal growth.
       </p>
 
-      <div className="posts-list">
-        {posts.map((post) => (
-          <article key={post.id} className="post-card">
-            <Link to={`/journal/${post.id}`} className="post-link">
-              <div className="post-header">
-                <h2>{post.title}</h2>
-                <time className="post-date">{formatDate(post.date)}</time>
-              </div>
-              <p className="post-excerpt">{post.excerpt}</p>
-              <div className="post-tags">
-                {post.tags.map((tag) => (
-                  <span key={tag} className="tag">
-                    {tag}
-                  </span>
-                ))}
-              </div>
-              <span className="read-more">Read more →</span>
-            </Link>
-          </article>
-        ))}
-      </div>
+      <PostList posts={posts} linkPrefix="/journal/" />
     </div>
   )
 }

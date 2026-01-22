@@ -1,9 +1,10 @@
 .nav {
   border-bottom: 1px solid var(--border);
-  background-color: var(--bg-primary);
+  background: linear-gradient(180deg, var(--bg-primary), var(--bg-secondary));
   position: sticky;
   top: 0;
   z-index: 100;
+  box-shadow: 0 10px 20px var(--shadow);
 }
 
 .nav-container {
@@ -55,6 +56,30 @@
 .nav-link.active {
   color: var(--accent);
   border-color: var(--accent);
+}
+
+.theme-toggle {
+  font-family: inherit;
+  font-size: 0.85rem;
+  border: 1px solid var(--border);
+  background: var(--bg-secondary);
+  color: var(--text-secondary);
+  border-radius: 8px;
+  padding: 0.25rem 0.6rem;
+  cursor: pointer;
+  transition: color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.theme-toggle:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+  background: var(--bg-tertiary);
+}
+
+.theme-toggle-icon {
+  display: inline-block;
+  line-height: 1;
+  letter-spacing: 0.08em;
 }
 
 @media (max-width: 640px) {

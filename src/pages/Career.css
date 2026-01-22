@@ -113,9 +113,10 @@
 
 .education-item {
   padding: 1.25rem;
-  background: var(--bg-secondary);
+  background: linear-gradient(160deg, var(--bg-secondary), var(--bg-tertiary));
   border: 1px solid var(--border);
-  border-radius: 8px;
+  border-radius: 12px;
+  box-shadow: 0 14px 28px var(--shadow);
 }
 
 .education-header {

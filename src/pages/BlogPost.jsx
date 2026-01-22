@@ -1,12 +1,28 @@
-import { useParams, Link } from 'react-router-dom'
+import { useParams, Link, useLocation } from 'react-router-dom'
 import { marked } from 'marked'
+import DOMPurify from 'dompurify'
 import { getPostById } from '../data/blogPosts'
 import { formatDate } from '../lib/formatDate'
 import './BlogPost.css'
 
+const renderer = new marked.Renderer()
+renderer.link = (href, title, text) => {
+  const isExternal = /^https?:\/\//i.test(href || '')
+  const rel = isExternal ? ' rel="noopener noreferrer"' : ''
+  const target = isExternal ? ' target="_blank"' : ''
+  const titleAttr = title ? ` title="${title}"` : ''
+  return `<a href="${href}"${titleAttr}${target}${rel}>${text}</a>`
+}
+
+marked.use({ renderer })
+
 export default function BlogPost() {
   const { id } = useParams()
+  const location = useLocation()
   const post = getPostById(id)
+  const isJournalPath = location.pathname.startsWith('/journal/')
+  const backTarget = isJournalPath ? '/journal' : '/'
+  const backLabel = isJournalPath ? 'Journal' : 'Thoughts'
 
   if (!post) {
     return (
@@ -14,20 +30,20 @@ export default function BlogPost() {
         <div className="not-found">
           <h1>Post Not Found</h1>
           <p>The blog post you're looking for doesn't exist.</p>
-          <Link to="/" className="back-link">
-            ← Back to Thoughts
+          <Link to={backTarget} className="back-link">
+            ← Back to {backLabel}
           </Link>
         </div>
       </div>
     )
   }
 
-  const html = marked.parse(post.content)
+  const html = DOMPurify.sanitize(marked.parse(post.content))
 
   return (
     <div className="container blog-post">
-      <Link to="/" className="back-link">
-        ← Back to Thoughts
+      <Link to={backTarget} className="back-link">
+        ← Back to {backLabel}
       </Link>
 
       <article>

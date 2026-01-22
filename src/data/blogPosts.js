@@ -1,30 +1,31 @@
-import matter from 'gray-matter'
+import frontMatter from 'front-matter'
 
 const postModules = import.meta.glob('/src/content/posts/*.md', {
-  as: 'raw',
+  query: '?raw',
+  import: 'default',
   eager: true
 })
 
 const posts = Object.entries(postModules).map(([path, content]) => {
   const slug = path.split('/').pop().replace('.md', '')
-  const { data, content: body } = matter(content)
+  const { attributes, body } = frontMatter(content)
 
   return {
-    id: data.id || slug,
-    title: data.title || slug,
-    date: data.date,
-    excerpt: data.excerpt || '',
-    tags: Array.isArray(data.tags) ? data.tags : [],
+    id: attributes.id || slug,
+    title: attributes.title || slug,
+    date: attributes.date,
+    excerpt: attributes.excerpt || '',
+    tags: Array.isArray(attributes.tags) ? attributes.tags : [],
     content: body.trim()
   }
 })
 
-export const blogPosts = posts
+export const blogPosts = posts.sort((a, b) => new Date(b.date) - new Date(a.date))
 
 export function getPostById(id) {
   return blogPosts.find(post => post.id === id)
 }
 
 export function getAllPosts() {
-  return [...blogPosts].sort((a, b) => new Date(b.date) - new Date(a.date))
+  return blogPosts
 }

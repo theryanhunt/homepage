@@ -1,12 +1,11 @@
-import { Link, useLocation } from 'react-router-dom'
+import { Link, NavLink, useLocation } from 'react-router-dom'
 import './Navigation.css'
 
-export default function Navigation() {
+export default function Navigation({ theme, onToggleTheme }) {
   const location = useLocation()
-
-  const isActive = (path) => {
-    return location.pathname === path
-  }
+  const isThoughts = location.pathname === '/' || location.pathname.startsWith('/thoughts/')
+  const isJournal = location.pathname === '/journal' || location.pathname.startsWith('/journal/')
+  const nextTheme = theme === 'dark' ? 'light' : 'dark'
 
   return (
     <nav className="nav">
@@ -15,24 +14,39 @@ export default function Navigation() {
           Ryan Hunt
         </Link>
         <div className="nav-links">
-          <Link
+          <NavLink
             to="/"
-            className={`nav-link ${isActive('/') || location.pathname.startsWith('/thoughts/') ? 'active' : ''}`}
+            className={`nav-link ${isThoughts ? 'active' : ''}`}
+            end
           >
             Thoughts
-          </Link>
-          <Link
+          </NavLink>
+          <NavLink
             to="/journal"
-            className={`nav-link ${isActive('/journal') || location.pathname.startsWith('/journal/') ? 'active' : ''}`}
+            className={`nav-link ${isJournal ? 'active' : ''}`}
+            end
           >
             Journal
-          </Link>
-          <Link
+          </NavLink>
+          <NavLink
             to="/career"
-            className={`nav-link ${isActive('/career') ? 'active' : ''}`}
+            className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}
+            end
           >
             Career
-          </Link>
+          </NavLink>
+          <button
+            type="button"
+            className="theme-toggle"
+            onClick={onToggleTheme}
+            aria-label={`Switch to ${nextTheme} mode`}
+            aria-pressed={theme === 'dark'}
+            title={`Switch to ${nextTheme} mode`}
+          >
+            <span className="theme-toggle-icon" aria-hidden="true">
+              {theme === 'dark' ? '\\o/' : '( )'}
+            </span>
+          </button>
         </div>
       </div>
     </nav>
